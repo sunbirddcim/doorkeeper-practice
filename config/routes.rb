@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :events, only: [:index, :show, :destroy]
   use_doorkeeper do
     controllers applications: 'oauth_applications'
   end
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :events, only: [:index, :create]
       resources :projects
       get '/me' => 'credentials#me'
     end
