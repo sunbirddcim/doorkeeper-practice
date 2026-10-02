@@ -283,12 +283,13 @@ Doorkeeper.configure do
   #   Rails.logger.info(params.inspect)
   # end
   #
-  # after_successful_authorization do |controller|
-  #   controller.session[:logout_urls] <<
-  #     Doorkeeper::Application
-  #       .find_by(controller.request.params.slice(:redirect_uri))
-  #       .logout_uri
-  # end
+after_successful_authorization do |controller, context|
+  context.auth.token.update(resource_owner_id: context.auth.token.application.owner_id) if context.auth.token.resource_owner_id.blank?
+  # controller.session[:logout_urls] <<
+    # Doorkeeper::Application
+      # .find_by(controller.request.params.slice(:redirect_uri))
+      # .logout_uri
+end
 
   # Under some circumstances you might want to have applications auto-approved,
   # so that the user skips the authorization step.
