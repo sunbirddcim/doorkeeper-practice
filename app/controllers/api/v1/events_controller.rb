@@ -2,7 +2,7 @@
 
 module Api::V1
   class EventsController < ApiController
-    before_action :doorkeeper_authorize!
+    before_action(only: %i[ create ]) { doorkeeper_authorize! :write }
     before_action :set_event, only: %i[ show edit update destroy ]
 
     # GET /events
