@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :events, only: [:index, :show, :destroy]
+  resources :events, only: [:index, :show, :destroy] do
+    delete :all, on: :collection, action: :destroy_all
+  end
+
   use_doorkeeper do
     controllers applications: 'oauth_applications'
   end

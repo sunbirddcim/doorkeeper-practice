@@ -14,6 +14,12 @@ class EventsController < ApplicationController
     redirect_to events_url, notice: "Event was successfully destroyed.", status: :see_other
   end
 
+  # DELETE /events
+  def destroy_all
+    Event.destroy_all
+    redirect_to events_url, notice: "All Events were successfully destroyed.", status: :see_other
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
