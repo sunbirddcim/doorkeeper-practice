@@ -13,6 +13,7 @@ module Api::V1
 
     # POST /events
     def create
+      Rails.logger.debug("[#{request.uuid}] got access-token: #{request.authorization.split.second}")
       @event = Event.new(json_content: event_params.to_json)
 
       if @event.save
