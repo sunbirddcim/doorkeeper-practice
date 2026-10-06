@@ -2,7 +2,8 @@
 
 module Api::V1
   class EventsController < ApiController
-    before_action(only: %i[ create ]) { doorkeeper_authorize! :write }
+    skip_forgery_protection only: %i[ create ] # Real Target System won't have it, and so should doorkeeper-practice
+    before_action -> { doorkeeper_authorize! :write }, only: %i[ create ]
     before_action :set_event, only: %i[ show edit update destroy ]
 
     # GET /events
