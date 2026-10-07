@@ -87,7 +87,6 @@ GEM
     crass (1.0.7)
     database_cleaner-active_record (2.2.2)
       activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
       database_cleaner-core (~> 2.0)
     database_cleaner-core (2.1.0)
     date (3.5.1)
@@ -170,12 +169,12 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.4)
+    nokogiri (1.17.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.19.4-arm64-darwin)
+    nokogiri (1.17.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.28.0)
@@ -327,10 +326,10 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.9.6)
+    sqlite3 (1.7.3)
       mini_portile2 (~> 2.8.0)
-    sqlite3 (2.9.6-arm64-darwin)
-    sqlite3 (2.9.6-x86_64-linux-gnu)
+    sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86_64-linux)
     thor (1.5.0)
     timeout (0.6.1)
     tsort (0.2.0)
@@ -368,6 +367,7 @@ DEPENDENCIES
   jquery-rails
   listen
   mini_racer
+  nokogiri (~> 1.17, < 1.18)
   pg (~> 1.6)
   pry-rails
   puma
