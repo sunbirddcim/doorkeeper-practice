@@ -3,11 +3,11 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.0"
+ruby "3.3.12"
 
-gem "rails", "~> 7.2"
-gem "doorkeeper", "~> 5.8.2"
-gem "devise", "~> 4.9"
+gem "rails", "~> 8.1"
+gem "doorkeeper", "~> 5.9.9"
+gem "devise", "~> 5.0"
 gem "sprockets-rails", require: "sprockets/railtie"
 
 gem "faker"
@@ -17,7 +17,8 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
-gem "pg", "~> 1.5", group: :production
+gem "mini_racer"
+gem "pg", "~> 1.6", group: :production
 gem "rollbar"
 
 gem "puma"
